@@ -108,5 +108,50 @@ delete player2.tempEffect;
 const test2 = player2.hasOwnProperty("tempEffect");
 console.log(test2);
 
-Object("server");
-// go further with step 6 on claude.
+const server = Object({
+    serverName: "CraftWorld",
+    maxPlayers: 20,
+    players: [player1, player2],
+    settings: {
+        difficulty: "hard",
+        pvp: true,
+        weather: "clear",
+    },
+});
+console.log(server.players[1].name);
+
+function getGuildName(player){
+    if(player?.guild === undefined){
+        return "No guild";
+    }else if(player?.guild !== undefined){
+        return player.guild;
+    }
+}
+console.log(getGuildName(player1));
+console.log(getGuildName(player2));
+
+function printPlayerCard(player){
+    const {name, level, health, gameMode, position: {x, y, z}} = player;
+    console.log(name, level, health, gameMode, x, y, z);
+    const {serverName, maxPlayers} = server;
+    console.log(serverName, maxPlayers);
+}
+console.log(printPlayerCard(player1));
+
+let hp = player1.health
+hp = 5;
+console.log(player1.health);//20
+
+const sameAsPlayer1 = player1;
+sameAsPlayer1.level = 99;
+console.log(player1.level);//99
+
+const player2Copy = {...player2};
+player2Copy.name = "Alex2";
+console.log(player2Copy.name);//alex2
+console.log(player2.name);//alex
+
+player2Copy.position.x = 20;
+console.log(player2Copy.position.x);//20
+console.log(player2.position.x);//20 copy's nested propertys are still shared with the original
+
