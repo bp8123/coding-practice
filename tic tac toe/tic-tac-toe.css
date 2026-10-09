@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1f22;
+    font-family: Arial, sans-serif;
+}
+
+#message{
+    text-align: center;
+    color: white;
+    height: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ffffff;
+    cursor: pointer;
+}
+
+.container > div:hover {
+    background-color: #2b2d31;
+}
+
+.container p {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    user-select: none;
+}
+
+/* Remove outer borders so it looks like a tic tac toe grid (# shape) */
+.left_top, .middle_top, .right_top {
+    border-top: none !important;
+}
+
+.left_bottom, .middle_bottom, .right_bottom {
+    border-bottom: none !important;
+}
+
+.left_top, .left_middle, .left_bottom {
+    border-left: none !important;
+}
+
+.right_top, .right_middle, .right_bottom {
+    border-right: none !important;
+}
+
+/* Highlight for the winning tiles */
+.container > div.winner {
+    background-color: #2e7d32;
+}
