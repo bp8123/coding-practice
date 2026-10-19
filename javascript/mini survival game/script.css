@@ -1,0 +1,37 @@
+#stats{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 3px black solid;
+    width: 250px;
+    height: 250px;
+    text-align: left;
+}
+#title-stats{
+    text-align: center;
+}
+#inventory{
+    text-align: center;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border: 3px black solid;
+    width: 250px;
+    height: 400px;
+}
+#buttons{
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    right: 1150px;
+}
+#logs{
+    text-align: left;
+    position: fixed;
+    border: 3px black solid;
+    width: 250px;
+    height: 400px;
+}
+#logs-title{
+    text-align: center;
+}
